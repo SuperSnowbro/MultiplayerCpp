@@ -22,9 +22,13 @@ public:
 	UFUNCTION(Exec)
 	void Host();
 
+	UFUNCTION(BlueprintCallable)
+		void CreateMainMenuUI();
+
 	UFUNCTION(Exec)
 	void Join(const FString& Address); //& means that it's passed by reference, avoiding to copy the fstring around
 	
-	
+private:
+	TSubclassOf<class UUserWidget> MenuWidgetClass;
 	
 };
